@@ -28,6 +28,7 @@ public class ClientMapper implements IClientMapper{
                 .fullName(userEntity.getFullName())
                 .password(userEntity.getPassword())
                 .email(userEntity.getEmail())
+                .rol(userEntity.getRol())
                 .build();
     }
 }

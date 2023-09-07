@@ -22,4 +22,8 @@ public class UserEntity {
     private String password;
     @Column(nullable = false)
     private String rol;
+    @OneToOne(mappedBy = "user")
+    private PaymentCardEntity card;
 }
+
+
