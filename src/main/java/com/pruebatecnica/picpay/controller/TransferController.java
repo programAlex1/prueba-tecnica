@@ -19,8 +19,7 @@ public class TransferController {
 
     private final ITransferUseCase iTransferUseCase;
     @PostMapping
-    public ResponseEntity<TransferResponseDto> save(@RequestBody TransferRequestDto transferRequestDto){
-        return ResponseEntity.status(HttpStatus.CREATED)
-                .body(iTransferUseCase.save(transferRequestDto));
+    public ResponseEntity<TransferResponseDto> save(@RequestBody TransferRequestDto transferRequestDto) throws Exception {
+        return ResponseEntity.status(HttpStatus.CREATED).body(iTransferUseCase.save(transferRequestDto));
     }
 }

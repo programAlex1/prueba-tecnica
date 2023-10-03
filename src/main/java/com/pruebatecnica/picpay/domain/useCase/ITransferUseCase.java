@@ -5,5 +5,5 @@ import com.pruebatecnica.picpay.domain.dto.response.TransferResponseDto;
 
 public interface ITransferUseCase {
 
-    TransferResponseDto save(TransferRequestDto transferRequestDto);
+    TransferResponseDto save(TransferRequestDto transferRequestDto) throws Exception;
 }

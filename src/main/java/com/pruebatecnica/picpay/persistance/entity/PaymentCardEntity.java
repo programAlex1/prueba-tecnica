@@ -4,6 +4,8 @@ package com.pruebatecnica.picpay.persistance.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 
 @Entity
 @Builder
@@ -19,7 +21,7 @@ public class PaymentCardEntity {
     private Long id;
 
     @Column(name = "monto",nullable = false)
-    private double amount;
+    private BigDecimal amount;
 
     @OneToOne()
     @JoinColumn(name = "id_user")

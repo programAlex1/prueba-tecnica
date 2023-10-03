@@ -12,6 +12,9 @@ import com.pruebatecnica.picpay.persistance.mapper.IPaymentCardMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
+import java.math.BigDecimal;
+import java.util.Optional;
+
 @Repository @RequiredArgsConstructor
 public class UserRepository implements IUserRepository {
 
@@ -24,8 +27,17 @@ public class UserRepository implements IUserRepository {
     public UserResponseDto save(UserRequestDto userRequestDto) {
         UserEntity entity =iUserCrudRepository.save(iClientMapper.toEntity(userRequestDto));
 
-        PaymentCardRequestDto dto = new PaymentCardRequestDto(0.0,entity);
+        PaymentCardRequestDto dto = PaymentCardRequestDto.builder()
+                .amount(BigDecimal.valueOf(0))
+                .user(entity)
+                .build();
         iPaymentCardCrudRepository.save(iPaymentCardMapper.toEntity(dto));
         return iClientMapper.toDto(entity);
+    }
+
+    @Override
+    public Optional<UserResponseDto> findById(Long id) {
+        return iUserCrudRepository.findById(id)
+                .map(iClientMapper::toDto);
     }
 }

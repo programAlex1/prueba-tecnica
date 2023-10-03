@@ -5,6 +5,7 @@ import lombok.Builder;
 
 @Builder
 public record UserRequestDto(
+        Long id,
         @NotEmpty @NotBlank String fullName,
         @NotBlank @NotEmpty String cpf,
         @Email(message = "The email format is incorrect") String email,

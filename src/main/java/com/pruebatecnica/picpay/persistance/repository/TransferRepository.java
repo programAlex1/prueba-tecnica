@@ -17,6 +17,6 @@ public class TransferRepository implements ITransferRepository {
     @Override
     public TransferResponseDto save(TransferRequestDto transferRequestDto) {
         iTransferCrudRepository.save(transferMapper.toEntity(transferRequestDto));
-        return new TransferResponseDto("Transfer succesfuly");
+        return new TransferResponseDto("Exitosa");
     }
 }

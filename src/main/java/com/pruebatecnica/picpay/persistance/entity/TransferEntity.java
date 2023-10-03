@@ -3,6 +3,8 @@ package com.pruebatecnica.picpay.persistance.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Entity @Builder @NoArgsConstructor @AllArgsConstructor @Getter @Setter
 public class TransferEntity {
 
@@ -10,7 +12,7 @@ public class TransferEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "monto",nullable = false)
-    private double amount;
+    private BigDecimal amount;
     @ManyToOne()
     @JoinColumn(name = "emisor")
     private PaymentCardEntity cardSender;

@@ -16,6 +16,15 @@ public class IPaymentCardMapperImpl implements IPaymentCardMapper {
     }
 
     @Override
+    public PaymentCardRequestDto toDtoRequest(PaymentCardEntity card) {
+        return PaymentCardRequestDto.builder()
+                .amount(card.getAmount())
+                .user(card.getUser())
+                .id(card.getId())
+                .build();
+    }
+
+    @Override
     public PaymentCardResponseDto toDto(PaymentCardEntity card) {
         return PaymentCardResponseDto.builder()
                 .id(card.getId())

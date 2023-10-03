@@ -1,12 +1,9 @@
 package com.pruebatecnica.picpay.domain.service;
 
-import com.pruebatecnica.picpay.domain.dto.request.PaymentCardRequestDto;
 import com.pruebatecnica.picpay.domain.dto.request.UserRequestDto;
 import com.pruebatecnica.picpay.domain.dto.response.UserResponseDto;
-import com.pruebatecnica.picpay.domain.repository.IPaymentCardRepository;
 import com.pruebatecnica.picpay.domain.repository.IUserRepository;
 import com.pruebatecnica.picpay.domain.useCase.IUserUseCase;
-import com.pruebatecnica.picpay.persistance.entity.UserEntity;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

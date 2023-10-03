@@ -8,7 +8,11 @@ public interface IPaymentCardMapper {
 
     PaymentCardEntity toEntity(PaymentCardRequestDto paymentCardRequestDto);
 
+    PaymentCardRequestDto toDtoRequest(PaymentCardEntity card);
+
     PaymentCardResponseDto toDto(PaymentCardEntity card);
+
+
 
 
 }

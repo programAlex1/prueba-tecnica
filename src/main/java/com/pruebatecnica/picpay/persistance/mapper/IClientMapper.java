@@ -10,4 +10,5 @@ public interface IClientMapper {
 
     UserResponseDto toDto(UserEntity userEntity);
 
+
 }
